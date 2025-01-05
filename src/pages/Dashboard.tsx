@@ -116,8 +116,8 @@ const WaveBackground = () => {
       <svg className="absolute w-full h-full" preserveAspectRatio="none" viewBox="0 0 1440 1000">
         <defs>
           <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="violet" stopOpacity="0.2" />
-            <stop offset="100%" stopColor="orange" stopOpacity="0.2" />
+            <stop offset="50%" stopColor="#A1FFCE" stopOpacity="0.4" />
+            <stop offset="50%" stopColor="#FAFFD1" stopOpacity="0.4" />
           </linearGradient>
         </defs>
         

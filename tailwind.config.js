@@ -8,7 +8,8 @@ export default {
     extend: {
       fontFamily: {
         playwrite : ["Playwrite AU SA", "sans-serif"],
-        agu : ["Agu Display", "sans-serif"]
+        agu : ["Agu Display", "sans-serif"],
+        quick : ["Quicksand", "sans-serif"]
       },
       colors: {
         purple: {
