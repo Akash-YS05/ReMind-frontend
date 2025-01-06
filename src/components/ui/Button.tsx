@@ -14,8 +14,8 @@ export interface ButtonProps {
 }
 
 const variantStyles = {
-    "primary" : "bg-purple-600 text-gray-50 hover:bg-indigo-300 duration-150",
-    "secondary" : "bg-white text-purple-500 hover:bg-indigo-100 duration-150"
+    "primary" : "bg-[#1dfbbd] text-black hover:bg-[#aff8e3] hover:scale-105 duration-200",
+    "secondary" : "bg-[#FAFFD1] text-black hover:bg-[#fcfba1] hover:scale-105 duration-200"
 }
 
 
