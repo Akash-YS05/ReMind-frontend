@@ -14,7 +14,7 @@ function Sidebar({setFilteredType} : {setFilteredType: (type: string) => void}) 
             <div className="pr-2">
                 <Logo/>
             </div>
-            <a href="/"> <h1 className="text-4xl text-center font-bold font-agu">ReMind</h1></a>
+            <a href="/"> <h1 className="text-4xl text-center font-agu">ReMind</h1></a>
         </div>
 
         <div className="pt-8 pl-4 flex-grow">

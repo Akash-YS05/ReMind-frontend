@@ -3,6 +3,7 @@ import Dashboard from "./pages/Dashboard"
 import Signin from "./pages/Signin"
 import Signup from "./pages/Signup"
 import Home from "./pages/Home"
+import { SharedBrain } from "./pages/SharedBrain"
 
 function App() {
 
@@ -13,6 +14,7 @@ function App() {
         <Route path="api/signup" element={<Signup/>}/>
         <Route path="api/signin" element={<Signin/>}/>
         <Route path="api/dashboard" element={<Dashboard/>}/>
+        <Route path="api/brain/:shareLink" element={<SharedBrain/>}/>
       </Routes>
     </BrowserRouter>
   )

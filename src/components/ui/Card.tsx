@@ -10,10 +10,11 @@ interface CardProps {
     link: string,
     _id: string,
     type: "twitter" | "youtube"
+    canDelete: boolean
 }
 
 
-export function Card({title, link, type, _id} : CardProps) {
+export function Card({title, link, type, _id, canDelete} : CardProps) {
     const [isDeleting, setIsDeleting]= useState(false)
     const [deleteMessage, setDeleteMessage] = useState<string | null>(null)
 
@@ -47,14 +48,14 @@ export function Card({title, link, type, _id} : CardProps) {
                     </div>
                     <div className="flex items-center">
                         <a href={link} target="_blank">
-                            <div className="pr-2 text-gray-500">
+                            <div className="pr-2 text-gray-500 hover:text-black">
                                 <ShareIcon size="md"/>
                             </div>
                         </a>
                         
-                        <div className={`pr-2 text-gray-500 cursor-pointer hover:text-black ${isDeleting? handleDelete: undefined}`} onClick={!isDeleting ? handleDelete : undefined}>
+                        {canDelete && ( <div className={`pr-2 text-gray-500 cursor-pointer hover:text-black ${isDeleting? handleDelete: undefined}`} onClick={!isDeleting ? handleDelete : undefined}>
                             <DeleteIcon/>
-                        </div>
+                        </div>)}
                     </div>
                 </div>
 

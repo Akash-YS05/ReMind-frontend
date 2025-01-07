@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { TwitterIcon } from "../icons/TwitterIcon";
 import { YoutubeIcon } from "../icons/YoutubeIcon";
 import { useEffect, useState } from "react";
+import { Logo } from "../icons/Logo";
 
 export default function Home() {
   const navigate = useNavigate();
@@ -36,9 +37,9 @@ export default function Home() {
       </div>
 
       <header className="flex justify-between items-center p-6  text-white">
-        <div className="flex items-center">
-          {/* <Logo className="w-10 h-10" /> */}
-          <h1 className="text-4xl font-bold ml-2 font-agu">ReMind</h1>
+        <div className="flex items-center ml-2">
+          <Logo/>
+          <h1 className="text-4xl ml-2 font-agu text-black">ReMind</h1>
         </div>
         <div className="flex gap-4">
           {/* <button
@@ -49,14 +50,22 @@ export default function Home() {
           </button> */}
 
           {isLoggedIn ? (
-            <button
-              onClick={handleLogout}
-              className="bg-white text-red-600 px-4 py-2 rounded shadow hover:bg-gray-100 transition"
-            >
-              Logout
-          </button>
+            <div className="flex gap-2">
+              <button
+                onClick={() => navigate("/api/dashboard")}
+                className="bg-white text-[#e96443] px-4 py-2 rounded shadow hover:bg-gray-100 transition"
+              >
+                Go to Dashboard
+              </button>
+              <button
+                onClick={handleLogout}
+                className="bg-white text-red-600 px-4 py-2 rounded shadow hover:bg-gray-100 transition"
+              >
+                Logout
+              </button>
+            </div>
           ) : (
-            <>
+            <div className="flex gap-2">
               <button
                 onClick={() => navigate("/api/signin")}
                 className="bg-white text-[#e96443] px-4 py-2 rounded shadow hover:bg-gray-100 transition"
@@ -69,7 +78,7 @@ export default function Home() {
               >
                 Register
               </button>
-            </>
+            </div>
           )}
 
           
@@ -81,7 +90,7 @@ export default function Home() {
           Save and Organize Your Favorite <br /> <span className="text-red-600">YouTube</span> Videos and <span className="text-black">Tweets</span>
         </h1>
         <p className="text-white text-xl max-w-3xl mb-8 font-quick">
-          ReMind helps you save posts and videos, access them anytime, and share them with friends. Get started now and make sure you never lose track of important content!
+          ReMind helps you save posts and videos from famous platforms like Twitter/X, Youtube, access them anytime, and share them with friends. Get started now and make sure you never lose track of important content!
         </p>
 
         {/* Action Buttons */}

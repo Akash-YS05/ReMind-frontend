@@ -105,7 +105,7 @@ import ShareLinkModal from '../components/ui/ShareLinkModal'
 import axios from 'axios'
 import { BACKEND_URL } from '../config'
 
-const WaveBackground = () => {
+export const WaveBackground = () => {
   return (
     <div style={{
       position: 'fixed',
@@ -157,7 +157,6 @@ function Dashboard() {
   //@ts-ignore
   const filteredContent = filteredType ? contents.filter((content) => content.type === filteredType) : contents
   if (!filteredContent) {
-    // Ensure `filteredContent` is not undefined
     return <div>Loading...</div>;
   }
   return (
@@ -174,7 +173,7 @@ function Dashboard() {
           setShareModalOpen(false)
         }}/>
         <div className='flex justify-between pb-8'>
-          <div className='font-bold text-5xl mb-2 pt-8 pl-4 font-agu'>{filteredType ? `${filteredType.charAt(0).toUpperCase()}${filteredType.slice(1)} Posts` : "Saved Posts"}</div>
+          <div className='text-5xl mb-2 pt-8 pl-4 font-agu'>{filteredType ? `${filteredType.charAt(0).toUpperCase()}${filteredType.slice(1)} Posts` : "Saved Posts"}</div>
 
           <div className='flex justify-between gap-4 pt-8 pr-4'>
           <Button onClick={() => {
@@ -194,7 +193,8 @@ function Dashboard() {
             title={title} 
             link={link} 
             type={type}
-            _id={_id}/>
+            _id={_id}
+            canDelete = {true}/>
           )}
         </div>
       </div>
