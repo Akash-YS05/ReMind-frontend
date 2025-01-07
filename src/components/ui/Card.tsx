@@ -3,6 +3,7 @@ import DeleteIcon from "../../icons/DeleteIcon";
 import LinkIcon from "../../icons/LinkIcon";
 import { ShareIcon } from "../../icons/ShareIcon";
 import { BACKEND_URL } from "../../config";
+import { useState } from "react";
 
 interface CardProps {
     title: string,
@@ -13,13 +14,23 @@ interface CardProps {
 
 
 export function Card({title, link, type, _id} : CardProps) {
+    const [isDeleting, setIsDeleting]= useState(false)
+    const [deleteMessage, setDeleteMessage] = useState<string | null>(null)
 
     async function handleDelete() {
-        const response = await axios.delete(`${BACKEND_URL}/api/content?_id=${_id}`, {
+        setIsDeleting(true)
+        setDeleteMessage("Deleting...")
+        await new Promise((resolve) => setTimeout(resolve, 5000));
+
+        await axios.delete(`${BACKEND_URL}/api/content?_id=${_id}`, {
             headers: {
                 "Authorization" : localStorage.getItem("token")
             }
         })
+
+        setDeleteMessage("Post deleted succesfully!")
+        setTimeout(() => setDeleteMessage(null), 3000)
+        setIsDeleting(false)
     }
     
     return (
@@ -41,11 +52,12 @@ export function Card({title, link, type, _id} : CardProps) {
                             </div>
                         </a>
                         
-                        <div className="pr-2 text-gray-500 cursor-pointer hover:text-black" onClick={handleDelete}>
+                        <div className={`pr-2 text-gray-500 cursor-pointer hover:text-black ${isDeleting? handleDelete: undefined}`} onClick={!isDeleting ? handleDelete : undefined}>
                             <DeleteIcon/>
                         </div>
                     </div>
                 </div>
+
                 <div className="pt-6 px-1 h-44 overflow-y-auto">
                     {type === "youtube" && <iframe className="w-full rounded-md" src={link.replace("/watch?v=", "/embed/")} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>}
                     
@@ -54,6 +66,10 @@ export function Card({title, link, type, _id} : CardProps) {
                     </blockquote>}
                     
                 </div>
+
+                {deleteMessage && (
+                    <div className="mt-2 text-center text-sm text-gray-700 bg-gray-100 p-2 rounded-md">{deleteMessage}</div>
+                )}
                 
             </div>
         </div>

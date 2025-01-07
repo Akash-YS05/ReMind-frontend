@@ -1,77 +1,3 @@
-// import { useNavigate } from "react-router-dom";
-// import { TwitterIcon } from "../icons/TwitterIcon";
-// import { YoutubeIcon } from "../icons/YoutubeIcon";
-// import { Logo } from "../icons/Logo";
-
-// export default function Home() {
-//   const navigate = useNavigate();
-
-//   return (
-//     <div className="bg-gradient-to-b from-blue-500 to-blue-300 min-h-screen flex flex-col">
-//       {/* Header Section */}
-//       <header className="flex justify-between items-center p-6 bg-blue-600 text-white">
-//         <div className="flex items-center">
-//           {/* <Logo className="w-10 h-10" /> */}
-//           <h1 className="text-4xl font-bold ml-2 font-agu">ReMind</h1>
-//         </div>
-//         <div className="flex gap-4">
-//           <button
-//             onClick={() => navigate("/dashboard")}
-//             className="bg-white text-blue-600 px-4 py-2 rounded shadow hover:bg-gray-100 transition"
-//           >
-//             Go to Dashboard
-//           </button>
-//           <button
-//             onClick={() => navigate("/dashboard")}
-//             className="bg-white text-blue-600 px-4 py-2 rounded shadow hover:bg-gray-100 transition"
-//           >
-//             Login
-//           </button>
-//           <button
-//             onClick={() => navigate("/dashboard")}
-//             className="bg-white text-blue-600 px-4 py-2 rounded shadow hover:bg-gray-100 transition"
-//           >
-//             Register
-//           </button>
-//         </div>
-//       </header>
-
-//       {/* Hero Section */}
-//       <main className="flex flex-col items-center justify-center flex-grow px-6 text-center">
-//         <h1 className="text-5xl font-extrabold font-playwrite text-white leading-relaxed mb-4">
-//           Save and Organize Your Favorite <br /> YouTube Videos and Tweets
-//         </h1>
-//         <p className="text-white text-lg max-w-2xl mb-8 font-quick">
-//           ReMind helps you save posts and videos, access them anytime, and share them with friends. Get started now and make sure you never lose track of important content!
-//         </p>
-
-//         {/* Action Buttons */}
-//         <div className="flex gap-4">
-//           <button
-//             onClick={() => navigate("/dashboard")}
-//             className="bg-black text-white px-6 py-3 rounded-md font-semibold flex items-center gap-2 shadow-md hover:bg-gray-700 transition"
-//           >
-//             <TwitterIcon /> Save Tweets
-//           </button>
-//           <button
-//             onClick={() => navigate("/dashboard")}
-//             className="bg-red-400 text-white px-6 py-3 rounded-md font-semibold flex items-center gap-2 shadow-md hover:bg-red-700 transition"
-//           >
-//             <YoutubeIcon /> Save YouTube Videos
-//           </button>
-//         </div>
-//       </main>
-
-//       {/* Footer */}
-//       <footer className="bg-blue-700 text-white py-4 text-center">
-//         <p className="text-sm">
-//           &copy; {new Date().getFullYear()} ReMind. Built to keep your favorite posts in one place.
-//         </p>
-//       </footer>
-//     </div>
-//   );
-// }
-
 
 import { useNavigate } from "react-router-dom";
 import { TwitterIcon } from "../icons/TwitterIcon";
@@ -161,13 +87,13 @@ export default function Home() {
         {/* Action Buttons */}
         <div className="flex gap-4">
           <button
-            onClick={() => navigate("/dashboard")}
+            onClick={() => (isLoggedIn) ? navigate("/api/dashboard") : navigate("/api/signup")}
             className="bg-black text-white px-6 py-3 rounded-md font-semibold flex items-center gap-2 shadow-md hover:bg-slate-800  hover:shadow-xl transition duration-200"
           >
             <TwitterIcon /> Save Tweets
           </button>
           <button
-            onClick={() => navigate("/dashboard")}
+            onClick={() => (isLoggedIn) ? navigate("/api/dashboard") : navigate("/api/signup")}
             className="bg-white text-red-600 px-6 py-3 rounded-md font-semibold flex items-center gap-2 shadow-md hover:bg-red-400 hover:text-white hover:shadow-xl transition duration-200"
           >
             <YoutubeIcon /> Save YouTube Videos
