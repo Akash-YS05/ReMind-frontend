@@ -3,7 +3,6 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import { Card } from "../components/ui/Card"; // Ensure this points to your Card component
 const BACKEND_URL = import.meta.env.VITE_API_URL || 3000
-import Sidebar from "../components/ui/Sidebar";
 import { WaveBackground } from "./Dashboard";
 
 interface Content {

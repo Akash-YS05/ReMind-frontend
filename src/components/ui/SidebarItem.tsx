@@ -1,4 +1,3 @@
-import { ReactElement } from "react"
 
 interface SidebarItemProps {
   text: string,
@@ -12,7 +11,7 @@ function SidebarItem({text, icon, onClick}: SidebarItemProps) {
         <div className="pr-2 min-w-11">
             {icon}
         </div>
-        <div className="hidden sm:block">
+        <div className="hidden sm:block text-lg">
             {text}
         </div>
     </div>

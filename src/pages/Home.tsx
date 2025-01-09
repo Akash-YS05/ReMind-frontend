@@ -92,7 +92,7 @@ export default function Home() {
         <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
           <button
             onClick={() => (isLoggedIn ? navigate("/api/dashboard") : navigate("/api/signup"))}
-            className="bg-black text-white px-4 py-2 sm:px-6 sm:py-3 rounded-md font-semibold flex items-center gap-2 shadow-md hover:bg-slate-800 hover:shadow-xl transition duration-200 w-full sm:w-auto"
+            className="bg-black text-white px-4 py-2 sm:px-6 sm:py-3 rounded-md font-semibold flex items-center gap-2 shadow-md hover:bg-blue-950 hover:shadow-xl transition duration-200 w-full sm:w-auto"
           >
             <TwitterIcon /> Save Tweets
           </button>

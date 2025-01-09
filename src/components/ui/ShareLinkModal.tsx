@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import useShareLink from '../../hooks/useShareLink'
 import { CrossIcon } from '../../icons/CrossIcon'
 
+//@ts-ignore
 export default function ShareLinkModal({open, onClose}) {
     const {shareLink, getShareLink} = useShareLink();
     const [copied, setCopied] = useState(false);

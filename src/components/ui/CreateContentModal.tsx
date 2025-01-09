@@ -9,7 +9,7 @@ enum Type {
     Youtube = "youtube",
     Twitter = "twitter"
 }
-
+//@ts-ignore
 export function CreateContentModal({open, onClose}) {
 
     const titleRef = useRef<HTMLInputElement>()
