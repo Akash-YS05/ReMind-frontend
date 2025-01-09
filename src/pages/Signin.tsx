@@ -3,7 +3,7 @@ import Button from "../components/ui/Button";
 import { Input } from "../components/ui/Input";
 import axios from "axios";
 const BACKEND_URL = import.meta.env.VITE_API_URL || 3000
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function Signin() {
 
@@ -21,7 +21,7 @@ export default function Signin() {
     })
     const jwt = response.data.token
     localStorage.setItem("token", jwt)
-    navigate("/api/dashboard")
+    navigate("/dashboard")
   }
 
   return (
@@ -33,7 +33,7 @@ export default function Signin() {
             <div className="flex justify-center p-4">
                 <Button onClick={signin} loading={false} variant="primary" size="md" text="Sign In" fullWidth={true}/>
             </div> 
-            <div className="text-center">Dont have an account? <a href="/api/signup" className="underline text-blue-500">Sign Up!</a></div> 
+            <div className="text-center">Dont have an account? <Link to="/signup" className="underline text-blue-500">Sign Up!</Link></div> 
         </div>
     </div>
   )

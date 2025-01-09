@@ -3,7 +3,7 @@ import Button from "../components/ui/Button";
 import { Input } from "../components/ui/Input";
 import axios from "axios";
 const BACKEND_URL = import.meta.env.VITE_API_URL || 3000
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function Signup() {
 
@@ -20,7 +20,7 @@ export default function Signup() {
       
     })
     alert("Signup succesful")
-    navigate("/api/signin")
+    navigate("/signin")
   }
   return (
     <div className="h-screen w-full flex justify-center items-center bg-gradient-to-tl from-[#007991] to-[#78ffd6]">
@@ -31,7 +31,7 @@ export default function Signup() {
             <div className="flex justify-center p-4">
                 <Button onClick={signup} loading={false} variant="primary" size="md" text="Sign up" fullWidth={true}/>
             </div>  
-            <div className="text-center">Already have an account? <a href="/api/signin" className="underline text-blue-500">Login!</a></div> 
+            <div className="text-center">Already have an account?  <Link to="/signin" className="underline text-blue-500">Sign In!</Link></div> 
 
         </div>
     </div>

@@ -11,10 +11,10 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home/>}/>
-        <Route path="api/signup" element={<Signup/>}/>
-        <Route path="api/signin" element={<Signin/>}/>
-        <Route path="api/dashboard" element={<Dashboard/>}/>
-        <Route path="api/brain/:shareLink" element={<SharedBrain/>}/>
+        <Route path="/signup" element={<Signup/>}/>
+        <Route path="/signin" element={<Signin/>}/>
+        <Route path="/dashboard" element={<Dashboard/>}/>
+        <Route path="/brain/:shareLink" element={<SharedBrain/>}/>
       </Routes>
     </BrowserRouter>
   )
