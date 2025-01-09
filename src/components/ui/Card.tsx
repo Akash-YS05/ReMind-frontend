@@ -2,7 +2,7 @@ import axios from "axios";
 import DeleteIcon from "../../icons/DeleteIcon";
 import LinkIcon from "../../icons/LinkIcon";
 import { ShareIcon } from "../../icons/ShareIcon";
-import { BACKEND_URL } from "../../config";
+const BACKEND_URL = import.meta.env.VITE_API_URL || 3000
 import { useState } from "react";
 
 interface CardProps {
@@ -21,7 +21,7 @@ export function Card({title, link, type, _id, canDelete} : CardProps) {
     async function handleDelete() {
         setIsDeleting(true)
         setDeleteMessage("Deleting...")
-        await new Promise((resolve) => setTimeout(resolve, 5000));
+        // await new Promise((resolve) => setTimeout(resolve, 2000));
 
         await axios.delete(`${BACKEND_URL}/api/content?_id=${_id}`, {
             headers: {

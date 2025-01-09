@@ -20,16 +20,17 @@ const variantStyles = {
 
 
 const sizeStyles = {
-    "sm" : "py-1 px-2 text-sm rounded-sm",
-    "md" : "py-2 px-4 text-md rounded-md",
-    "lg" : "py-4 px-6 text-xl rounded-xl"
-}
+    "sm": "py-1 px-1 text-sm rounded-sm sm:py-2 sm:px-3 sm:rounded-md", // Slightly larger on small screens
+    "md": "py-2 px-2 text-md rounded-md sm:py-2 sm:px-3 sm:rounded-lg", // Medium size adjusts on small screens
+    "lg": "py-3 px-3 text-sm rounded-xl sm:py-5 sm:px-7 sm:rounded-2xl" // Large size adapts for small screens
+  };
+  
 
 function Button(props: ButtonProps) {
   return <button onClick={props.onClick} className={`${variantStyles[props.variant]} ${sizeStyles[props.size]} ${props.fullWidth ? "w-full flex justify-center items-center" : ""} ${props.loading ? "opacity-45" : ""}`} disabled={props.loading}>
     <div className="flex items-center">
         {props.startIcon} 
-        <div className="pl-2 pr-2">
+        <div className="px-1 md:px-3">
             {props.text}
         </div>
         {props.endIcon}

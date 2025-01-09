@@ -1,6 +1,6 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
-import { BACKEND_URL } from "../config"
+const BACKEND_URL = import.meta.env.VITE_API_URL || 3000
 
 export default function useContent() {
     const [contents, setContents] = useState([])

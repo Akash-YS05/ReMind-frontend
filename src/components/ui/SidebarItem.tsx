@@ -12,7 +12,7 @@ function SidebarItem({text, icon, onClick}: SidebarItemProps) {
         <div className="pr-2 min-w-11">
             {icon}
         </div>
-        <div className="text-lg">
+        <div className="hidden sm:block">
             {text}
         </div>
     </div>

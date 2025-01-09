@@ -42,12 +42,6 @@ export default function Home() {
           <h1 className="text-4xl ml-2 font-agu text-black">ReMind</h1>
         </div>
         <div className="flex gap-4">
-          {/* <button
-            onClick={() => navigate("/api/dashboard")}
-            className="bg-white text-[#e96443] px-4 py-2 rounded shadow hover:bg-gray-100 transition"
-          >
-            Go to Dashboard
-          </button> */}
 
           {isLoggedIn ? (
             <div className="flex gap-2">
@@ -85,30 +79,32 @@ export default function Home() {
         </div>
       </header>
 
-      <main className="flex flex-col items-center justify-center flex-grow px-6 text-center">
-        <h1 className="text-6xl font-extrabold tracking-tight font-playwrite text-white leading-relaxed mb-4">
-          Save and Organize Your Favorite <br /> <span className="text-red-600">YouTube</span> Videos and <span className="text-black">Tweets</span>
+      <main className="flex flex-col items-center justify-center flex-grow px-4 sm:px-6 md:px-12 text-center">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tighter font-playwrite text-white md:leading-relaxed leading-normal sm:leading-relaxed mb-4">
+          Save and Organize Your Favorite <br />
+          <span className="text-red-600">YouTube</span> Videos and <span className="text-black">Tweets</span>
         </h1>
-        <p className="text-white text-xl max-w-3xl mb-8 font-quick">
-          ReMind helps you save posts and videos from famous platforms like Twitter/X, Youtube, access them anytime, and share them with friends. Get started now and make sure you never lose track of important content!
+        <p className="text-white text-base sm:text-lg md:text-xl max-w-xl sm:max-w-2xl lg:max-w-3xl mb-6 sm:mb-8 font-quick">
+          ReMind helps you save posts and videos from famous platforms like Twitter/X, YouTube, access them anytime, and share them with friends. Get started now and make sure you never lose track of important content!
         </p>
 
         {/* Action Buttons */}
-        <div className="flex gap-4">
+        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
           <button
-            onClick={() => (isLoggedIn) ? navigate("/api/dashboard") : navigate("/api/signup")}
-            className="bg-black text-white px-6 py-3 rounded-md font-semibold flex items-center gap-2 shadow-md hover:bg-slate-800  hover:shadow-xl transition duration-200"
+            onClick={() => (isLoggedIn ? navigate("/api/dashboard") : navigate("/api/signup"))}
+            className="bg-black text-white px-4 py-2 sm:px-6 sm:py-3 rounded-md font-semibold flex items-center gap-2 shadow-md hover:bg-slate-800 hover:shadow-xl transition duration-200 w-full sm:w-auto"
           >
             <TwitterIcon /> Save Tweets
           </button>
           <button
-            onClick={() => (isLoggedIn) ? navigate("/api/dashboard") : navigate("/api/signup")}
-            className="bg-white text-red-600 px-6 py-3 rounded-md font-semibold flex items-center gap-2 shadow-md hover:bg-red-400 hover:text-white hover:shadow-xl transition duration-200"
+            onClick={() => (isLoggedIn ? navigate("/api/dashboard") : navigate("/api/signup"))}
+            className="bg-white text-red-600 px-4 py-2 sm:px-6 sm:py-3 rounded-md font-semibold flex items-center gap-2 shadow-md hover:bg-red-400 hover:text-white hover:shadow-xl transition duration-200 w-full sm:w-auto"
           >
             <YoutubeIcon /> Save YouTube Videos
           </button>
         </div>
       </main>
+
 
       <footer className=" text-white py-4 text-center">
         <p className="text-sm">

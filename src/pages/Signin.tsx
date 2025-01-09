@@ -2,7 +2,7 @@ import { useRef } from "react";
 import Button from "../components/ui/Button";
 import { Input } from "../components/ui/Input";
 import axios from "axios";
-import { BACKEND_URL } from "../config";
+const BACKEND_URL = import.meta.env.VITE_API_URL || 3000
 import { useNavigate } from "react-router-dom";
 
 export default function Signin() {

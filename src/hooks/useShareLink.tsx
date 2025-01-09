@@ -1,16 +1,12 @@
 import axios from "axios";
 import { useState } from "react"
-import { BACKEND_URL } from "../config";
+const BACKEND_URL = import.meta.env.VITE_API_URL || 3000
+const FRONTEND_URL = import.meta.env.VITE_FRONTEND_API_URL
 
 interface ShareLinkResponse {
     shareLink: string;
     error?: string;
   }
-
-//   interface UseShareLink {
-//     shareLink: string;
-//     getShareLink: () => Promise<void>;
-//   }
 
 export default function useShareLink() {
     const [shareLink, setShareLink] = useState('');
@@ -24,7 +20,7 @@ export default function useShareLink() {
                 },
             })
         if (response.data.hash){
-            setShareLink(`${BACKEND_URL}/api/brain/${response.data.hash}`)
+            setShareLink(`${FRONTEND_URL}/api/brain/${response.data.hash}`)
         }
     }
 

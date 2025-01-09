@@ -3,7 +3,7 @@ import { CrossIcon } from "../../icons/CrossIcon";
 import Button from "./Button";
 import { Input } from "./Input";
 import axios from "axios";
-import { BACKEND_URL } from "../../config";
+const BACKEND_URL = import.meta.env.VITE_API_URL || 3000
 
 enum Type {
     Youtube = "youtube",
