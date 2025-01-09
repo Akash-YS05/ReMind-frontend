@@ -26,7 +26,7 @@ export default function Signin() {
 
   return (
     <div className="h-screen w-full flex justify-center items-center bg-gradient-to-tl from-[#007991] to-[#78ffd6]">
-        <div className="bg-white rounded-xl border min-w-48 p-8">
+        <div className="bg-white rounded-xl border min-w-48 p-6 sm:p-8">
             <h1 className="text-2xl font-bold text-center p-4">Sign In to your Account</h1>
             <Input reference={usernameRef} placeholder="Username"/>
             <Input reference={passRef} placeholder="Password"/>
