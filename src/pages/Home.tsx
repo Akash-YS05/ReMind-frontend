@@ -91,13 +91,13 @@ export default function Home() {
         {/* Action Buttons */}
         <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
           <button
-            onClick={() => (isLoggedIn ? navigate("/api/dashboard") : navigate("/signup"))}
+            onClick={() => (isLoggedIn ? navigate("/dashboard") : navigate("/signup"))}
             className="bg-black text-white px-4 py-3 sm:px-6 sm:py-3 rounded-md font-semibold flex items-center justify-center gap-2 shadow-md hover:bg-blue-950 hover:shadow-xl transition duration-200 w-full sm:w-auto"
           >
             <TwitterIcon /> Save Tweets
           </button>
           <button
-            onClick={() => (isLoggedIn ? navigate("/api/dashboard") : navigate("/signup"))}
+            onClick={() => (isLoggedIn ? navigate("/dashboard") : navigate("/signup"))}
             className="bg-white text-red-600 px-4 py-2 sm:px-6 sm:py-3 rounded-md font-semibold flex items-center gap-2 shadow-md hover:bg-red-400 hover:text-white hover:shadow-xl transition duration-200 w-full sm:w-auto"
           >
             <YoutubeIcon /> Save YouTube Videos
