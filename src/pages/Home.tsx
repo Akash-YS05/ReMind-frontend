@@ -46,7 +46,7 @@ export default function Home() {
           {isLoggedIn ? (
             <div className="flex gap-2">
               <button
-                onClick={() => navigate("/api/dashboard")}
+                onClick={() => navigate("/dashboard")}
                 className="bg-white text-[#e96443] px-4 py-2 rounded shadow hover:bg-gray-100 transition"
               >
                 Go to Dashboard
